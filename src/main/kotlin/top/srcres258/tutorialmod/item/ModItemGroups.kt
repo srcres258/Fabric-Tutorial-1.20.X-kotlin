@@ -1,0 +1,38 @@
+package top.srcres258.tutorialmod.item
+
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
+import net.minecraft.item.ItemGroup
+import net.minecraft.item.ItemStack
+import net.minecraft.item.Items
+import net.minecraft.registry.Registries
+import net.minecraft.registry.Registry
+import net.minecraft.text.Text
+import net.minecraft.util.Identifier
+import top.srcres258.tutorialmod.TutorialMod
+
+object ModItemGroups {
+    val RUBY_GROUP: ItemGroup = Registry.register(
+        Registries.ITEM_GROUP,
+        Identifier(TutorialMod.MOD_ID, "ruby"),
+        FabricItemGroup.builder()
+            .displayName(Text.translatable("itemgroup.ruby"))
+            .icon { ItemStack(ModItems.RUBY) }
+            .entries { _, entries ->
+                entries.run {
+                    // mod
+                    ModItems.run {
+                        add(RUBY)
+                        add(RAW_RUBY)
+                    }
+
+                    // vanilla
+                    add(Items.DIAMOND)
+                }
+            }
+            .build()
+    )
+
+    fun registerItemGroups() {
+        TutorialMod.LOGGER.info("Registering Item Groups for ${TutorialMod.MOD_ID}")
+    }
+}
