@@ -9,6 +9,7 @@ import net.minecraft.registry.Registry
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import top.srcres258.tutorialmod.TutorialMod
+import top.srcres258.tutorialmod.block.ModBlocks
 
 object ModItemGroups {
     val RUBY_GROUP: ItemGroup = Registry.register(
@@ -19,14 +20,26 @@ object ModItemGroups {
             .icon { ItemStack(ModItems.RUBY) }
             .entries { _, entries ->
                 entries.run {
-                    // mod
-                    ModItems.run {
-                        add(RUBY)
-                        add(RAW_RUBY)
+                    // items
+                    run {
+                        // mod
+                        ModItems.run {
+                            add(RUBY)
+                            add(RAW_RUBY)
+                        }
+
+                        // vanilla
+                        add(Items.DIAMOND)
                     }
 
-                    // vanilla
-                    add(Items.DIAMOND)
+                    // blocks
+                    run {
+                        // mod
+                        ModBlocks.run {
+                            add(RUBY_BLOCK)
+                            add(RAW_RUBY_BLOCK)
+                        }
+                    }
                 }
             }
             .build()
