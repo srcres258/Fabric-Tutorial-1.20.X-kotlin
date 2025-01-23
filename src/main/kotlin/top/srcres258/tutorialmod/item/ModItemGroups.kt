@@ -26,6 +26,8 @@ object ModItemGroups {
                         ModItems.run {
                             add(RUBY)
                             add(RAW_RUBY)
+
+                            add(METAL_DETECTOR)
                         }
 
                         // vanilla
