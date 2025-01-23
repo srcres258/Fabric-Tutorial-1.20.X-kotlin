@@ -45,6 +45,8 @@ object ModItemGroups {
                             add(DEEPSLATE_RUBY_ORE)
                             add(NETHER_RUBY_ORE)
                             add(END_STONE_RUBY_ORE)
+
+                            add(SOUND_BLOCK)
                         }
                     }
                 }

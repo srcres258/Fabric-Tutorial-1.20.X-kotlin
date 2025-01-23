@@ -12,6 +12,7 @@ import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.intprovider.UniformIntProvider
 import top.srcres258.tutorialmod.TutorialMod
+import top.srcres258.tutorialmod.block.custom.SoundBlock
 
 object ModBlocks {
     val RUBY_BLOCK: Block = registerBlock("ruby_block",
@@ -31,6 +32,9 @@ object ModBlocks {
     val END_STONE_RUBY_ORE: Block = registerBlock("end_stone_ruby_ore",
         ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.END_STONE).strength(4F),
             UniformIntProvider.create(4, 7)))
+
+    val SOUND_BLOCK: Block = registerBlock("sound_block",
+        SoundBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(
