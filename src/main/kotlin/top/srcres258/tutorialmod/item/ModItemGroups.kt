@@ -38,6 +38,11 @@ object ModItemGroups {
                         ModBlocks.run {
                             add(RUBY_BLOCK)
                             add(RAW_RUBY_BLOCK)
+
+                            add(RUBY_ORE)
+                            add(DEEPSLATE_RUBY_ORE)
+                            add(NETHER_RUBY_ORE)
+                            add(END_STONE_RUBY_ORE)
                         }
                     }
                 }
