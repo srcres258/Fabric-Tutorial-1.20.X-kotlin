@@ -10,12 +10,12 @@ import top.srcres258.tutorialmod.datagen.ModRecipeProvider
 
 object TutorialModDataGenerator : DataGeneratorEntrypoint {
 	override fun onInitializeDataGenerator(fabricDataGenerator: FabricDataGenerator) {
-		fabricDataGenerator.createPack().run {
-			addProvider(::ModBlockTagProvider)
-			addProvider(::ModItemTagProvider)
-			addProvider(::ModLootTableProvider)
-			addProvider(::ModModelProvider)
-			addProvider(::ModRecipeProvider)
+		fabricDataGenerator.createPack().let { pack ->
+			pack.addProvider(::ModBlockTagProvider)
+			pack.addProvider(::ModItemTagProvider)
+			pack.addProvider(::ModLootTableProvider)
+			pack.addProvider(::ModModelProvider)
+			pack.addProvider(::ModRecipeProvider)
 		}
 	}
 }

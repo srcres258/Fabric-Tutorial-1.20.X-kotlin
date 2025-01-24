@@ -51,6 +51,19 @@ object ModItemGroups {
                             add(END_STONE_RUBY_ORE)
 
                             add(SOUND_BLOCK)
+
+                            add(RUBY_STAIRS)
+                            add(RUBY_SLAB)
+
+                            add(RUBY_BUTTON)
+                            add(RUBY_PRESSURE_PLATE)
+
+                            add(RUBY_FENCE)
+                            add(RUBY_FENCE_GATE)
+                            add(RUBY_WALL)
+
+                            add(RUBY_DOOR)
+                            add(RUBY_TRAPDOOR)
                         }
                     }
                 }
