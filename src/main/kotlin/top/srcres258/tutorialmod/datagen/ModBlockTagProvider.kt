@@ -48,6 +48,9 @@ class ModBlockTagProvider(
         goctb(TagKey.of(RegistryKeys.BLOCK, Identifier("fabric", "needs_tool_level_4")))
             .add(ModBlocks.END_STONE_RUBY_ORE)
 
+        goctb(TagKey.of(RegistryKeys.BLOCK, Identifier("fabric", "needs_tool_level_5")))
+            .add(ModBlocks.SOUND_BLOCK)
+
         goctb(BlockTags.FENCES)
             .add(ModBlocks.RUBY_FENCE)
         goctb(BlockTags.FENCE_GATES)

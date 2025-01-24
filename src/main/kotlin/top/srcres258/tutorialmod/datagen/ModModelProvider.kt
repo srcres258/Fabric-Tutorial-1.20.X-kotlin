@@ -37,9 +37,18 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         ModItems.run { arrayOf(
             RUBY,
             RAW_RUBY,
+
             COAL_BRIQUETTE,
             TOMATO,
             METAL_DETECTOR
         ) }.forEach { generator.register(it, Models.GENERATED) }
+
+        ModItems.run { arrayOf(
+            RUBY_PICKAXE,
+            RUBY_AXE,
+            RUBY_SHOVEL,
+            RUBY_SWORD,
+            RUBY_HOE
+        ) }.forEach { generator.register(it, Models.HANDHELD) }
     }
 }

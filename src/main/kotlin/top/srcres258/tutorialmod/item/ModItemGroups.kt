@@ -34,6 +34,12 @@ object ModItemGroups {
                             add(COAL_BRIQUETTE)
 
                             add(RUBY_STAFF)
+
+                            add(RUBY_PICKAXE)
+                            add(RUBY_AXE)
+                            add(RUBY_SHOVEL)
+                            add(RUBY_SWORD)
+                            add(RUBY_HOE)
                         }
 
                         // vanilla
