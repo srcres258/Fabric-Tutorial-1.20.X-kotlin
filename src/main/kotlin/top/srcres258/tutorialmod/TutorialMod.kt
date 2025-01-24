@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.item.ModItemGroups
 import top.srcres258.tutorialmod.item.ModItems
+import top.srcres258.tutorialmod.util.ModLootTableModifiers
 
 object TutorialMod : ModInitializer {
 	const val MOD_ID = "tutorialmod"
@@ -17,6 +18,8 @@ object TutorialMod : ModInitializer {
 
 		ModItems.registerModItems()
 		ModBlocks.registerModBlocks()
+
+		ModLootTableModifiers.modifyLootTables()
 
 		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200) // 200 is for melting one item
 	}
