@@ -16,6 +16,7 @@ import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
 import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.item.custom.MetalDetectorItem
+import top.srcres258.tutorialmod.item.custom.ModArmorItem
 
 object ModItems {
     val RUBY: Item = registerItem("ruby", Item(FabricItemSettings()))
@@ -42,7 +43,7 @@ object ModItems {
         HoeItem(ModToolMaterial.RUBY, 0, 0F, FabricItemSettings()))
 
     val RUBY_HELMET: Item = registerItem("ruby_helmet",
-        ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET, FabricItemSettings()))
+        ModArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET, FabricItemSettings()))
     val RUBY_CHESTPLATE: Item = registerItem("ruby_chestplate",
         ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, FabricItemSettings()))
     val RUBY_LEGGINGS: Item = registerItem("ruby_leggings",
