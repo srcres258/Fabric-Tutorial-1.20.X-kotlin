@@ -3,6 +3,7 @@ package top.srcres258.tutorialmod.item
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import net.minecraft.item.ArmorItem
 import net.minecraft.item.AxeItem
 import net.minecraft.item.HoeItem
 import net.minecraft.item.Item
@@ -39,6 +40,15 @@ object ModItems {
         SwordItem(ModToolMaterial.RUBY, 5, 3F, FabricItemSettings()))
     val RUBY_HOE: Item = registerItem("ruby_hoe",
         HoeItem(ModToolMaterial.RUBY, 0, 0F, FabricItemSettings()))
+
+    val RUBY_HELMET: Item = registerItem("ruby_helmet",
+        ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET, FabricItemSettings()))
+    val RUBY_CHESTPLATE: Item = registerItem("ruby_chestplate",
+        ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, FabricItemSettings()))
+    val RUBY_LEGGINGS: Item = registerItem("ruby_leggings",
+        ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, FabricItemSettings()))
+    val RUBY_BOOTS: Item = registerItem("ruby_boots",
+        ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS, FabricItemSettings()))
 
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)

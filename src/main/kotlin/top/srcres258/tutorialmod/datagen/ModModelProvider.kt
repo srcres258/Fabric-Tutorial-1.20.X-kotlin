@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
 import net.minecraft.data.client.BlockStateModelGenerator
 import net.minecraft.data.client.ItemModelGenerator
 import net.minecraft.data.client.Models
+import net.minecraft.item.ArmorItem
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.item.ModItems
 
@@ -50,5 +51,12 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             RUBY_SWORD,
             RUBY_HOE
         ) }.forEach { generator.register(it, Models.HANDHELD) }
+
+        ModItems.run { arrayOf(
+            RUBY_HELMET,
+            RUBY_CHESTPLATE,
+            RUBY_LEGGINGS,
+            RUBY_BOOTS
+        ) }.forEach { generator.registerArmor(it as ArmorItem) }
     }
 }

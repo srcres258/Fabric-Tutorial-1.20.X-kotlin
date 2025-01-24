@@ -40,6 +40,11 @@ object ModItemGroups {
                             add(RUBY_SHOVEL)
                             add(RUBY_SWORD)
                             add(RUBY_HOE)
+
+                            add(RUBY_HELMET)
+                            add(RUBY_CHESTPLATE)
+                            add(RUBY_LEGGINGS)
+                            add(RUBY_BOOTS)
                         }
 
                         // vanilla
