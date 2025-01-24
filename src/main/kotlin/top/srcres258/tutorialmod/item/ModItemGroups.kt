@@ -32,6 +32,8 @@ object ModItemGroups {
                             add(TOMATO)
 
                             add(COAL_BRIQUETTE)
+
+                            add(RUBY_STAFF)
                         }
 
                         // vanilla

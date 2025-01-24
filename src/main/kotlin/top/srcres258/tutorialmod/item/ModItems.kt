@@ -22,6 +22,8 @@ object ModItems {
 
     val COAL_BRIQUETTE: Item = registerItem("coal_briquette", Item(FabricItemSettings()))
 
+    val RUBY_STAFF: Item = registerItem("ruby_staff", Item(FabricItemSettings().maxCount(1)))
+
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)
         entries.add(RAW_RUBY)
