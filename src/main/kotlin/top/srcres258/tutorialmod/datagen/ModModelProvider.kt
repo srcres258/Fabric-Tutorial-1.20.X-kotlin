@@ -7,6 +7,7 @@ import net.minecraft.data.client.ItemModelGenerator
 import net.minecraft.data.client.Models
 import net.minecraft.item.ArmorItem
 import top.srcres258.tutorialmod.block.ModBlocks
+import top.srcres258.tutorialmod.block.custom.TomatoCropBlock
 import top.srcres258.tutorialmod.item.ModItems
 
 class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
@@ -32,6 +33,9 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
         generator.registerDoor(ModBlocks.RUBY_DOOR)
         generator.registerTrapdoor(ModBlocks.RUBY_TRAPDOOR)
+
+        generator.registerCrop(ModBlocks.TOMATO_CROP, TomatoCropBlock.AGE,
+            *(0 .. TomatoCropBlock.MAX_AGE).toList().toIntArray())
     }
 
     override fun generateItemModels(generator: ItemModelGenerator) {

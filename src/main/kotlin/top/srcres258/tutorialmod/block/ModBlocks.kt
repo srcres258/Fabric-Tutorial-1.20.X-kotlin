@@ -24,6 +24,7 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.math.intprovider.UniformIntProvider
 import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.custom.SoundBlock
+import top.srcres258.tutorialmod.block.custom.TomatoCropBlock
 
 object ModBlocks {
     val RUBY_BLOCK: Block = registerBlock("ruby_block",
@@ -74,6 +75,9 @@ object ModBlocks {
     val RUBY_TRAPDOOR: Block = registerBlock("ruby_trapdoor",
         TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque(),
             BlockSetType.IRON))
+
+    val TOMATO_CROP: Block = Registry.register(Registries.BLOCK, Identifier(TutorialMod.MOD_ID, "tomato_crop"),
+        TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)))
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(

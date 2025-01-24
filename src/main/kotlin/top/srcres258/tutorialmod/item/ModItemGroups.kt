@@ -45,6 +45,8 @@ object ModItemGroups {
                             add(RUBY_CHESTPLATE)
                             add(RUBY_LEGGINGS)
                             add(RUBY_BOOTS)
+
+                            add(TOMATO_SEEDS)
                         }
 
                         // vanilla

@@ -9,8 +9,12 @@ object TutorialModClient : ClientModInitializer {
     override fun onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.run {
             RenderLayer.getCutout().let { cutout ->
-                putBlock(ModBlocks.RUBY_DOOR, cutout)
-                putBlock(ModBlocks.RUBY_TRAPDOOR, cutout)
+                arrayOf(
+                    ModBlocks.RUBY_DOOR,
+                    ModBlocks.RUBY_TRAPDOOR,
+
+                    ModBlocks.TOMATO_CROP
+                ).forEach { putBlock(it, cutout) }
             }
         }
     }

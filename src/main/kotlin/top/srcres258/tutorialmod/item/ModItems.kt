@@ -3,6 +3,7 @@ package top.srcres258.tutorialmod.item
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import net.minecraft.item.AliasedBlockItem
 import net.minecraft.item.ArmorItem
 import net.minecraft.item.AxeItem
 import net.minecraft.item.HoeItem
@@ -15,6 +16,7 @@ import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
 import top.srcres258.tutorialmod.TutorialMod
+import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.item.custom.MetalDetectorItem
 import top.srcres258.tutorialmod.item.custom.ModArmorItem
 
@@ -50,6 +52,9 @@ object ModItems {
         ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, FabricItemSettings()))
     val RUBY_BOOTS: Item = registerItem("ruby_boots",
         ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS, FabricItemSettings()))
+
+    val TOMATO_SEEDS: Item = registerItem("tomato_seeds",
+        AliasedBlockItem(ModBlocks.TOMATO_CROP, FabricItemSettings()))
 
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)
