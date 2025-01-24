@@ -28,6 +28,8 @@ object ModItemGroups {
                             add(RAW_RUBY)
 
                             add(METAL_DETECTOR)
+
+                            add(TOMATO)
                         }
 
                         // vanilla
