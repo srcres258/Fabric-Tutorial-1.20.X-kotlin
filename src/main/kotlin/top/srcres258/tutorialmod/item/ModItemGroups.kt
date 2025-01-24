@@ -47,6 +47,9 @@ object ModItemGroups {
                             add(RUBY_BOOTS)
 
                             add(TOMATO_SEEDS)
+
+                            add(CORN_SEEDS)
+                            add(CORN)
                         }
 
                         // vanilla

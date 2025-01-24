@@ -12,6 +12,7 @@ import net.minecraft.loot.function.SetCountLootFunction
 import net.minecraft.loot.provider.number.UniformLootNumberProvider
 import net.minecraft.predicate.StatePredicate
 import top.srcres258.tutorialmod.block.ModBlocks
+import top.srcres258.tutorialmod.block.custom.CornCropBlock
 import top.srcres258.tutorialmod.block.custom.TomatoCropBlock
 import top.srcres258.tutorialmod.item.ModItems
 
@@ -40,6 +41,14 @@ class ModLootTableProvider(dataOutput: FabricDataOutput) : FabricBlockLootTableP
         addDrop(ModBlocks.TOMATO_CROP, cropDrops(ModBlocks.TOMATO_CROP, ModItems.TOMATO, ModItems.TOMATO_SEEDS,
             BlockStatePropertyLootCondition.builder(ModBlocks.TOMATO_CROP)
                 .properties(StatePredicate.Builder.create().exactMatch(TomatoCropBlock.AGE, TomatoCropBlock.MAX_AGE))))
+        addDrop(ModBlocks.CORN_CROP, cropDrops(ModBlocks.CORN_CROP, ModItems.CORN, ModItems.CORN_SEEDS,
+            BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP)
+                .properties(StatePredicate.Builder.create()
+                    .exactMatch(CornCropBlock.AGE, CornCropBlock.FIRST_STAGE_MAX_AGE))
+                .or(BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP)
+                    .properties(StatePredicate.Builder.create()
+                        .exactMatch(CornCropBlock.AGE, CornCropBlock.FIRST_STAGE_MAX_AGE +
+                                CornCropBlock.SECOND_STAGE_MAX_AGE)))))
     }
 
     private fun copperLikeOreDrops(drop: Block, item: Item) =

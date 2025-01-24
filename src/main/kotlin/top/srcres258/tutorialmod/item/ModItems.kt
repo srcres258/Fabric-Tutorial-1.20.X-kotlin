@@ -56,6 +56,10 @@ object ModItems {
     val TOMATO_SEEDS: Item = registerItem("tomato_seeds",
         AliasedBlockItem(ModBlocks.TOMATO_CROP, FabricItemSettings()))
 
+    val CORN_SEEDS: Item = registerItem("corn_seeds",
+        AliasedBlockItem(ModBlocks.CORN_CROP, FabricItemSettings()))
+    val CORN: Item = registerItem("corn", Item(FabricItemSettings()))
+
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)
         entries.add(RAW_RUBY)

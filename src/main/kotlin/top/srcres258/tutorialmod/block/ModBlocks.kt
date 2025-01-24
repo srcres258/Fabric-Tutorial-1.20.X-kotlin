@@ -23,6 +23,7 @@ import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.intprovider.UniformIntProvider
 import top.srcres258.tutorialmod.TutorialMod
+import top.srcres258.tutorialmod.block.custom.CornCropBlock
 import top.srcres258.tutorialmod.block.custom.SoundBlock
 import top.srcres258.tutorialmod.block.custom.TomatoCropBlock
 
@@ -78,6 +79,9 @@ object ModBlocks {
 
     val TOMATO_CROP: Block = Registry.register(Registries.BLOCK, Identifier(TutorialMod.MOD_ID, "tomato_crop"),
         TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)))
+
+    val CORN_CROP: Block = Registry.register(Registries.BLOCK, Identifier(TutorialMod.MOD_ID, "corn_crop"),
+        CornCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)))
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(

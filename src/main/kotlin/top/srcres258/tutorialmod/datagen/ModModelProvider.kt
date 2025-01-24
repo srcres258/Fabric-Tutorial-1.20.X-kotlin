@@ -7,6 +7,7 @@ import net.minecraft.data.client.ItemModelGenerator
 import net.minecraft.data.client.Models
 import net.minecraft.item.ArmorItem
 import top.srcres258.tutorialmod.block.ModBlocks
+import top.srcres258.tutorialmod.block.custom.CornCropBlock
 import top.srcres258.tutorialmod.block.custom.TomatoCropBlock
 import top.srcres258.tutorialmod.item.ModItems
 
@@ -36,6 +37,8 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
         generator.registerCrop(ModBlocks.TOMATO_CROP, TomatoCropBlock.AGE,
             *(0 .. TomatoCropBlock.MAX_AGE).toList().toIntArray())
+        generator.registerCrop(ModBlocks.CORN_CROP, CornCropBlock.AGE,
+            *(0 .. CornCropBlock.FIRST_STAGE_MAX_AGE + CornCropBlock.SECOND_STAGE_MAX_AGE).toList().toIntArray())
     }
 
     override fun generateItemModels(generator: ItemModelGenerator) {
@@ -44,8 +47,10 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             RAW_RUBY,
 
             COAL_BRIQUETTE,
+            METAL_DETECTOR,
+
             TOMATO,
-            METAL_DETECTOR
+            CORN
         ) }.forEach { generator.register(it, Models.GENERATED) }
 
         ModItems.run { arrayOf(
