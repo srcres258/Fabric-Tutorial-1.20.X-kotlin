@@ -3,12 +3,15 @@ package top.srcres258.tutorialmod.item.custom
 import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
+import net.minecraft.client.item.TooltipContext
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
+import net.minecraft.item.ItemStack
 import net.minecraft.item.ItemUsageContext
 import net.minecraft.text.Text
 import net.minecraft.util.ActionResult
 import net.minecraft.util.math.BlockPos
+import net.minecraft.world.World
 
 class MetalDetectorItem(settings: Settings) : Item(settings) {
     override fun useOnBlock(context: ItemUsageContext): ActionResult {
@@ -39,6 +42,11 @@ class MetalDetectorItem(settings: Settings) : Item(settings) {
         }
 
         return ActionResult.SUCCESS
+    }
+
+    override fun appendTooltip(stack: ItemStack, world: World?, tooltip: MutableList<Text>, context: TooltipContext) {
+        tooltip.add(Text.translatable("tooltip.tutorialmod.metal_detector.tooltip"))
+        super.appendTooltip(stack, world, tooltip, context)
     }
 }
 
