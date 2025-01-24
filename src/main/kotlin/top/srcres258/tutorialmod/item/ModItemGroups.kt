@@ -30,6 +30,8 @@ object ModItemGroups {
                             add(METAL_DETECTOR)
 
                             add(TOMATO)
+
+                            add(COAL_BRIQUETTE)
                         }
 
                         // vanilla

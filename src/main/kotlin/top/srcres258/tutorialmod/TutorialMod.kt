@@ -1,6 +1,7 @@
 package top.srcres258.tutorialmod
 
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.registry.FuelRegistry
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import top.srcres258.tutorialmod.block.ModBlocks
@@ -13,7 +14,10 @@ object TutorialMod : ModInitializer {
 
 	override fun onInitialize() {
 		ModItemGroups.registerItemGroups()
+
 		ModItems.registerModItems()
 		ModBlocks.registerModBlocks()
+
+		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200) // 200 is for melting one item
 	}
 }

@@ -20,6 +20,8 @@ object ModItems {
 
     val TOMATO: Item = registerItem("tomato", Item(FabricItemSettings().food(ModFoodComponents.TOMATO)))
 
+    val COAL_BRIQUETTE: Item = registerItem("coal_briquette", Item(FabricItemSettings()))
+
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)
         entries.add(RAW_RUBY)
