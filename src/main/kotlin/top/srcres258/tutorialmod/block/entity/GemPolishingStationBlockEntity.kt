@@ -6,10 +6,13 @@ import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.inventory.Inventories
+import net.minecraft.inventory.SimpleInventory
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.network.PacketByteBuf
+import net.minecraft.recipe.RecipeEntry
+import net.minecraft.registry.DynamicRegistryManager
 import net.minecraft.screen.PropertyDelegate
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.server.network.ServerPlayerEntity
@@ -17,8 +20,9 @@ import net.minecraft.text.Text
 import net.minecraft.util.collection.DefaultedList
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
-import top.srcres258.tutorialmod.item.ModItems
+import top.srcres258.tutorialmod.recipe.GemPolishingRecipe
 import top.srcres258.tutorialmod.screen.GemPolishingScreenHandler
+import java.util.Optional
 
 private const val INPUT_SLOT = 0
 private const val OUTPUT_SLOT = 1
@@ -102,10 +106,14 @@ class GemPolishingStationBlockEntity(
     }
 
     private fun craftItem() {
+        // We're sure that the current recipe is present when this method is called,
+        // so call Optional.get without checking.
+        val recipe = currentRecipe.get()
+        val curOutput = getStack(OUTPUT_SLOT)
+        val recipeOutput = recipe.value.getResult(DynamicRegistryManager.EMPTY)
+
         removeStack(INPUT_SLOT, 1)
-        val result = ItemStack(ModItems.RUBY)
-        val output = getStack(OUTPUT_SLOT)
-        setStack(OUTPUT_SLOT, ItemStack(result.item, output.count + result.count))
+        setStack(OUTPUT_SLOT, ItemStack(recipeOutput.item, curOutput.count + recipeOutput.count))
     }
 
     private val hasCraftingFinished
@@ -115,11 +123,33 @@ class GemPolishingStationBlockEntity(
         progress++
     }
 
-    private val hasRecipe
-        get() = ItemStack(ModItems.RUBY).let { result ->
-            val hasInput = getStack(INPUT_SLOT).item == ModItems.RAW_RUBY
-            hasInput && canInsertAmountIntoOutputSlot(result) &&
-                    canInsertItemIntoOutputSlot(result.item)
+    private val hasRecipe: Boolean
+        get() {
+            val recipe = currentRecipe
+            return if (recipe.isPresent) {
+                val recipeOutput = recipe.get().value.getResult(DynamicRegistryManager.EMPTY)
+                canInsertAmountIntoOutputSlot(recipeOutput) && canInsertItemIntoOutputSlot(recipeOutput.item)
+            } else {
+                false
+            }
+        }
+
+    private val currentRecipe: Optional<RecipeEntry<GemPolishingRecipe>>
+        get() = world.let { world ->
+            if (world == null) {
+                Optional.empty()
+            } else {
+                val size = size()
+                world.recipeManager.getFirstMatch(
+                    GemPolishingRecipe.Type,
+                    SimpleInventory(size).also { inv ->
+                        for (i in 0 ..< size) {
+                            inv.setStack(i, getStack(i))
+                        }
+                    },
+                    world
+                )
+            }
         }
 
     private fun canInsertItemIntoOutputSlot(pItem: Item) =

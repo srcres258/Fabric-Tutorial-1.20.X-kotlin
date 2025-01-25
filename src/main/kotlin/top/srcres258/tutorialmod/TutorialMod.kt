@@ -11,6 +11,7 @@ import top.srcres258.tutorialmod.entity.ModEntities
 import top.srcres258.tutorialmod.entity.custom.PorcupineEntity
 import top.srcres258.tutorialmod.item.ModItemGroups
 import top.srcres258.tutorialmod.item.ModItems
+import top.srcres258.tutorialmod.recipe.ModRecipes
 import top.srcres258.tutorialmod.screen.ModScreenHandlers
 import top.srcres258.tutorialmod.sound.ModSounds
 import top.srcres258.tutorialmod.util.ModCustomTrades
@@ -37,6 +38,8 @@ object TutorialMod : ModInitializer {
 		ModBlockEntities.registerBlockEntities()
 
 		ModScreenHandlers.registerScreenHandlers()
+
+		ModRecipes.registerRecipes()
 
 		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200) // 200 is for melting one item
 
