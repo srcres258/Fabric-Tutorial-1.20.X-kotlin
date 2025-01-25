@@ -12,12 +12,14 @@ import net.minecraft.item.ItemGroups
 import net.minecraft.item.MusicDiscItem
 import net.minecraft.item.PickaxeItem
 import net.minecraft.item.ShovelItem
+import net.minecraft.item.SpawnEggItem
 import net.minecraft.item.SwordItem
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
 import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.ModBlocks
+import top.srcres258.tutorialmod.entity.ModEntities
 import top.srcres258.tutorialmod.item.custom.MetalDetectorItem
 import top.srcres258.tutorialmod.item.custom.ModArmorItem
 import top.srcres258.tutorialmod.sound.ModSounds
@@ -64,6 +66,9 @@ object ModItems {
 
     val BAR_BRAWL_MUSIC_DISC: Item = registerItem("bar_brawl_music_disc",
         MusicDiscItem(7, ModSounds.BAR_BRAWL, FabricItemSettings().maxCount(1), 122))
+
+    val PORCUPINE_SPAWN_EGG: Item = registerItem("porcupine_spawn_egg",
+        SpawnEggItem(ModEntities.PORCUPINE, 0xA86518, 0x3B260F, FabricItemSettings()))
 
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)

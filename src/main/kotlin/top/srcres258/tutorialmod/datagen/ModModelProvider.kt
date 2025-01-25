@@ -4,12 +4,15 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
 import net.minecraft.data.client.BlockStateModelGenerator
 import net.minecraft.data.client.ItemModelGenerator
+import net.minecraft.data.client.Model
 import net.minecraft.data.client.Models
 import net.minecraft.item.ArmorItem
+import net.minecraft.util.Identifier
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.block.custom.CornCropBlock
 import top.srcres258.tutorialmod.block.custom.TomatoCropBlock
 import top.srcres258.tutorialmod.item.ModItems
+import java.util.*
 
 class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     override fun generateBlockStateModels(generator: BlockStateModelGenerator) {
@@ -71,5 +74,8 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             RUBY_LEGGINGS,
             RUBY_BOOTS
         ) }.forEach { generator.registerArmor(it as ArmorItem) }
+
+        generator.register(ModItems.PORCUPINE_SPAWN_EGG,
+            Model(Optional.of(Identifier("item/template_spawn_egg")), Optional.empty()))
     }
 }

@@ -1,10 +1,13 @@
 package top.srcres258.tutorialmod
 
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
 import net.fabricmc.fabric.api.registry.FuelRegistry
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import top.srcres258.tutorialmod.block.ModBlocks
+import top.srcres258.tutorialmod.entity.ModEntities
+import top.srcres258.tutorialmod.entity.custom.PorcupineEntity
 import top.srcres258.tutorialmod.item.ModItemGroups
 import top.srcres258.tutorialmod.item.ModItems
 import top.srcres258.tutorialmod.sound.ModSounds
@@ -30,5 +33,7 @@ object TutorialMod : ModInitializer {
 		ModSounds.registerSounds()
 
 		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200) // 200 is for melting one item
+
+		FabricDefaultAttributeRegistry.register(ModEntities.PORCUPINE, PorcupineEntity.createPorcupineAttributes())
 	}
 }
