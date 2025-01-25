@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.item.ModItemGroups
 import top.srcres258.tutorialmod.item.ModItems
+import top.srcres258.tutorialmod.sound.ModSounds
 import top.srcres258.tutorialmod.util.ModCustomTrades
 import top.srcres258.tutorialmod.util.ModLootTableModifiers
 import top.srcres258.tutorialmod.villager.ModVillagers
@@ -25,6 +26,8 @@ object TutorialMod : ModInitializer {
 
 		ModCustomTrades.registerCustomTrades()
 		ModVillagers.registerVillagers()
+
+		ModSounds.registerSounds()
 
 		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200) // 200 is for melting one item
 	}

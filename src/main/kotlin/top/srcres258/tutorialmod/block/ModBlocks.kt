@@ -29,6 +29,7 @@ import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.custom.CornCropBlock
 import top.srcres258.tutorialmod.block.custom.SoundBlock
 import top.srcres258.tutorialmod.block.custom.TomatoCropBlock
+import top.srcres258.tutorialmod.sound.ModSounds
 
 object ModBlocks {
     val RUBY_BLOCK: Block = registerBlock("ruby_block",
@@ -50,7 +51,7 @@ object ModBlocks {
             UniformIntProvider.create(4, 7)))
 
     val SOUND_BLOCK: Block = registerBlock("sound_block",
-        SoundBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))
+        SoundBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(ModSounds.SOUND_BLOCK_SOUNDS)))
 
     val RUBY_STAIRS: Block = registerBlock("ruby_stairs",
         StairsBlock(RUBY_BLOCK.defaultState, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))

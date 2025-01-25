@@ -7,10 +7,12 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.item.ItemUsageContext
+import net.minecraft.sound.SoundCategory
 import net.minecraft.text.Text
 import net.minecraft.util.ActionResult
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
+import top.srcres258.tutorialmod.sound.ModSounds
 import top.srcres258.tutorialmod.util.ModTags
 
 class MetalDetectorItem(settings: Settings) : Item(settings) {
@@ -28,6 +30,10 @@ class MetalDetectorItem(settings: Settings) : Item(settings) {
                 if (isValuableBlock(state)) {
                     outputValuableCoordinates(curPos, player, state.block)
                     foundBlock = true
+
+                    context.world.playSound(null, posClicked, ModSounds.METAL_DETECTOR_FOUND_ORE,
+                        SoundCategory.BLOCKS, 1F, 1F)
+
                     break
                 }
             }
