@@ -164,6 +164,7 @@ public class PorcupineModel<T extends PorcupineEntity> extends SinglePartEntityM
 
         this.animateMovement(ModAnimations.PORCUPINE_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
         this.updateAnimation(entity.getIdleAnimationState(), ModAnimations.PORCUPINE_IDLE, ageInTicks, 1f);
+        this.updateAnimation(entity.getAttackAnimationState(), ModAnimations.PORCUPINE_ATTACK, ageInTicks, 1f);
     }
 
     private void setHeadAngles(float headYaw, float headPitch) {
