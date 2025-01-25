@@ -84,7 +84,7 @@ class CornCropBlock(settings: Settings?) : CropBlock(settings) {
         builder.add(AGE)
     }
 
-    override fun isFertilizable(world: WorldView, pos: BlockPos, state: BlockState, isClient: Boolean) =
+    override fun isFertilizable(world: WorldView, pos: BlockPos, state: BlockState) =
         if (getAge(state) < FIRST_STAGE_MAX_AGE) {
             true
         } else {

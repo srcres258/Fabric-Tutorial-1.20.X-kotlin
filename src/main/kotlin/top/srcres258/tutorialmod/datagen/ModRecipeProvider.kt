@@ -2,7 +2,7 @@ package top.srcres258.tutorialmod.datagen
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
-import net.minecraft.data.server.recipe.RecipeJsonProvider
+import net.minecraft.data.server.recipe.RecipeExporter
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder
 import net.minecraft.item.ItemConvertible
 import net.minecraft.item.Items
@@ -10,7 +10,6 @@ import net.minecraft.recipe.book.RecipeCategory
 import net.minecraft.util.Identifier
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.item.ModItems
-import java.util.function.Consumer
 
 private val RUBY_SMELTABLES = listOf<ItemConvertible>(
     ModItems.RAW_RUBY,
@@ -21,7 +20,7 @@ private val RUBY_SMELTABLES = listOf<ItemConvertible>(
 )
 
 class ModRecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
-    override fun generate(exporter: Consumer<RecipeJsonProvider>) {
+    override fun generate(exporter: RecipeExporter) {
         offerSmelting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
             0.7F, 200, "ruby")
         offerBlasting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,

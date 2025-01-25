@@ -7,14 +7,17 @@ import net.minecraft.item.EnchantedBookItem
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
 import net.minecraft.village.TradeOffer
+import net.minecraft.village.TradeOffers
 import net.minecraft.village.VillagerProfession
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.item.ModItems
 import top.srcres258.tutorialmod.villager.ModVillagers
+import java.util.function.Consumer
 
 object ModCustomTrades {
     fun registerCustomTrades() {
-        val rvo = TradeOfferHelper::registerVillagerOffers
+        val rvo: (VillagerProfession, Int, Consumer<MutableList<TradeOffers.Factory>>) -> Unit =
+            TradeOfferHelper::registerVillagerOffers
         val rwto = TradeOfferHelper::registerWanderingTraderOffers
 
         rvo(VillagerProfession.FARMER, 1) { factories ->
