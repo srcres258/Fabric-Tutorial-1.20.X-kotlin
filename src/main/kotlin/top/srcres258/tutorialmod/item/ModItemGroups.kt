@@ -82,6 +82,8 @@ object ModItemGroups {
 
                             add(RUBY_DOOR)
                             add(RUBY_TRAPDOOR)
+
+                            add(DAHLIA)
                         }
                     }
                 }

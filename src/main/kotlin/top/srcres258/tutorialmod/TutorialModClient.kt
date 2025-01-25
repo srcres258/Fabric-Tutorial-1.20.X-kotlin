@@ -14,7 +14,10 @@ object TutorialModClient : ClientModInitializer {
                     ModBlocks.RUBY_TRAPDOOR,
 
                     ModBlocks.TOMATO_CROP,
-                    ModBlocks.CORN_CROP
+                    ModBlocks.CORN_CROP,
+
+                    ModBlocks.DAHLIA,
+                    ModBlocks.POTTED_DAHLIA
                 ).forEach { putBlock(it, cutout) }
             }
         }

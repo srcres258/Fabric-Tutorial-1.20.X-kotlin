@@ -10,12 +10,15 @@ import net.minecraft.block.DoorBlock
 import net.minecraft.block.ExperienceDroppingBlock
 import net.minecraft.block.FenceBlock
 import net.minecraft.block.FenceGateBlock
+import net.minecraft.block.FlowerBlock
+import net.minecraft.block.FlowerPotBlock
 import net.minecraft.block.PressurePlateBlock
 import net.minecraft.block.SlabBlock
 import net.minecraft.block.StairsBlock
 import net.minecraft.block.TrapdoorBlock
 import net.minecraft.block.WallBlock
 import net.minecraft.block.WoodType
+import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.item.BlockItem
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
@@ -82,6 +85,12 @@ object ModBlocks {
 
     val CORN_CROP: Block = Registry.register(Registries.BLOCK, Identifier(TutorialMod.MOD_ID, "corn_crop"),
         CornCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)))
+
+    val DAHLIA: Block = registerBlock("dahlia",
+        FlowerBlock(StatusEffects.FIRE_RESISTANCE, 10,
+            FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()))
+    val POTTED_DAHLIA: Block = Registry.register(Registries.BLOCK, Identifier(TutorialMod.MOD_ID, "potted_dahlia"),
+        FlowerPotBlock(DAHLIA, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()))
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(

@@ -49,6 +49,9 @@ class ModLootTableProvider(dataOutput: FabricDataOutput) : FabricBlockLootTableP
                     .properties(StatePredicate.Builder.create()
                         .exactMatch(CornCropBlock.AGE, CornCropBlock.FIRST_STAGE_MAX_AGE +
                                 CornCropBlock.SECOND_STAGE_MAX_AGE)))))
+
+        addDrop(ModBlocks.DAHLIA)
+        addPottedPlantDrops(ModBlocks.POTTED_DAHLIA)
     }
 
     private fun copperLikeOreDrops(drop: Block, item: Item) =

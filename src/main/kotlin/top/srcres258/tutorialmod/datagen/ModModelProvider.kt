@@ -39,6 +39,9 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             *(0 .. TomatoCropBlock.MAX_AGE).toList().toIntArray())
         generator.registerCrop(ModBlocks.CORN_CROP, CornCropBlock.AGE,
             *(0 .. CornCropBlock.FIRST_STAGE_MAX_AGE + CornCropBlock.SECOND_STAGE_MAX_AGE).toList().toIntArray())
+
+        generator.registerFlowerPotPlant(ModBlocks.DAHLIA, ModBlocks.POTTED_DAHLIA,
+            BlockStateModelGenerator.TintType.NOT_TINTED)
     }
 
     override fun generateItemModels(generator: ItemModelGenerator) {
