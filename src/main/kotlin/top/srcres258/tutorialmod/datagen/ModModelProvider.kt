@@ -45,6 +45,8 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
         generator.registerFlowerPotPlant(ModBlocks.DAHLIA, ModBlocks.POTTED_DAHLIA,
             BlockStateModelGenerator.TintType.NOT_TINTED)
+
+        generator.registerSimpleState(ModBlocks.GEM_POLISHING_STATION)
     }
 
     override fun generateItemModels(generator: ItemModelGenerator) {

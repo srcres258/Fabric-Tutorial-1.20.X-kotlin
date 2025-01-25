@@ -6,10 +6,12 @@ import net.fabricmc.fabric.api.registry.FuelRegistry
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import top.srcres258.tutorialmod.block.ModBlocks
+import top.srcres258.tutorialmod.block.entity.ModBlockEntities
 import top.srcres258.tutorialmod.entity.ModEntities
 import top.srcres258.tutorialmod.entity.custom.PorcupineEntity
 import top.srcres258.tutorialmod.item.ModItemGroups
 import top.srcres258.tutorialmod.item.ModItems
+import top.srcres258.tutorialmod.screen.ModScreenHandlers
 import top.srcres258.tutorialmod.sound.ModSounds
 import top.srcres258.tutorialmod.util.ModCustomTrades
 import top.srcres258.tutorialmod.util.ModLootTableModifiers
@@ -31,6 +33,10 @@ object TutorialMod : ModInitializer {
 		ModVillagers.registerVillagers()
 
 		ModSounds.registerSounds()
+
+		ModBlockEntities.registerBlockEntities()
+
+		ModScreenHandlers.registerScreenHandlers()
 
 		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200) // 200 is for melting one item
 

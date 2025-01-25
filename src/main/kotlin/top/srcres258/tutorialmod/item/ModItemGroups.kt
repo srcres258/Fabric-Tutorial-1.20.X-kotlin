@@ -88,6 +88,8 @@ object ModItemGroups {
                             add(RUBY_TRAPDOOR)
 
                             add(DAHLIA)
+
+                            add(GEM_POLISHING_STATION)
                         }
                     }
                 }

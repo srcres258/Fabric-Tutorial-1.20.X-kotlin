@@ -27,6 +27,7 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.math.intprovider.UniformIntProvider
 import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.custom.CornCropBlock
+import top.srcres258.tutorialmod.block.custom.GemPolishingStationBlock
 import top.srcres258.tutorialmod.block.custom.SoundBlock
 import top.srcres258.tutorialmod.block.custom.TomatoCropBlock
 import top.srcres258.tutorialmod.sound.ModSounds
@@ -92,6 +93,9 @@ object ModBlocks {
             FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()))
     val POTTED_DAHLIA: Block = Registry.register(Registries.BLOCK, Identifier(TutorialMod.MOD_ID, "potted_dahlia"),
         FlowerPotBlock(DAHLIA, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()))
+
+    val GEM_POLISHING_STATION: Block = registerBlock("gem_polishing_station",
+        GemPolishingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()))
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(
