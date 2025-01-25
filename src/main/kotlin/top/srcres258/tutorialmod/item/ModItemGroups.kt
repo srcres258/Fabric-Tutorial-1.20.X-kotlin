@@ -52,6 +52,8 @@ object ModItemGroups {
                             add(CORN)
 
                             add(BAR_BRAWL_MUSIC_DISC)
+
+                            add(PORCUPINE_SPAWN_EGG)
                         }
 
                         // vanilla
