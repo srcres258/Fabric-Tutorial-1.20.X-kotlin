@@ -9,6 +9,7 @@ import net.minecraft.item.AxeItem
 import net.minecraft.item.HoeItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroups
+import net.minecraft.item.MusicDiscItem
 import net.minecraft.item.PickaxeItem
 import net.minecraft.item.ShovelItem
 import net.minecraft.item.SwordItem
@@ -19,6 +20,7 @@ import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.item.custom.MetalDetectorItem
 import top.srcres258.tutorialmod.item.custom.ModArmorItem
+import top.srcres258.tutorialmod.sound.ModSounds
 
 object ModItems {
     val RUBY: Item = registerItem("ruby", Item(FabricItemSettings()))
@@ -59,6 +61,9 @@ object ModItems {
     val CORN_SEEDS: Item = registerItem("corn_seeds",
         AliasedBlockItem(ModBlocks.CORN_CROP, FabricItemSettings()))
     val CORN: Item = registerItem("corn", Item(FabricItemSettings()))
+
+    val BAR_BRAWL_MUSIC_DISC: Item = registerItem("bar_brawl_music_disc",
+        MusicDiscItem(7, ModSounds.BAR_BRAWL, FabricItemSettings().maxCount(1), 122))
 
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)

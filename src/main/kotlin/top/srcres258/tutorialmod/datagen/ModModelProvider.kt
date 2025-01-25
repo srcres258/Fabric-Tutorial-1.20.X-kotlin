@@ -49,11 +49,12 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             RUBY,
             RAW_RUBY,
 
+            TOMATO,
+            CORN,
+
             COAL_BRIQUETTE,
             METAL_DETECTOR,
-
-            TOMATO,
-            CORN
+            BAR_BRAWL_MUSIC_DISC
         ) }.forEach { generator.register(it, Models.GENERATED) }
 
         ModItems.run { arrayOf(

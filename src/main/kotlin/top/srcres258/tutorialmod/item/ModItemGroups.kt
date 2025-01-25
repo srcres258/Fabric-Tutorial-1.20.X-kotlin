@@ -50,6 +50,8 @@ object ModItemGroups {
 
                             add(CORN_SEEDS)
                             add(CORN)
+
+                            add(BAR_BRAWL_MUSIC_DISC)
                         }
 
                         // vanilla

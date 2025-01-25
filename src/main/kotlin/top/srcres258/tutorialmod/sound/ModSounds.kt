@@ -16,6 +16,8 @@ object ModSounds {
     val SOUND_BLOCK_HIT: SoundEvent = registerSoundEvent("sound_block_hit")
     val SOUND_BLOCK_FALL: SoundEvent = registerSoundEvent("sound_block_fall")
 
+    val BAR_BRAWL: SoundEvent = registerSoundEvent("bar_brawl")
+
     val SOUND_BLOCK_SOUNDS = BlockSoundGroup(1F, 1F,
         SOUND_BLOCK_BREAK, SOUND_BLOCK_STEP, SOUND_BLOCK_PLACE, SOUND_BLOCK_HIT, SOUND_BLOCK_FALL)
 
