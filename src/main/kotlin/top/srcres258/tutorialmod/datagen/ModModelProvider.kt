@@ -55,6 +55,8 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             .log(ModBlocks.STRIPPED_CHESTNUT_LOG)
             .wood(ModBlocks.STRIPPED_CHESTNUT_WOOD)
         generator.registerSimpleCubeAll(ModBlocks.CHESTNUT_LEAVES)
+        generator.registerTintableCross(ModBlocks.CHESTNUT_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED)
+
         generator.registerCubeAllModelTexturePool(ModBlocks.CHESTNUT_PLANKS)
             .family(ModBlocks.CHESTNUT_FAMILY)
     }

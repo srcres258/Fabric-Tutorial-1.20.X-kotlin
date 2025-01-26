@@ -19,6 +19,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider
 import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.custom.*
 import top.srcres258.tutorialmod.sound.ModSounds
+import top.srcres258.tutorialmod.world.tree.ChestnutSaplingGenerator
 
 object ModBlocks {
     val RUBY_BLOCK: Block = registerBlock("ruby_block",
@@ -126,6 +127,9 @@ object ModBlocks {
 
     val DICE_BLOCK: Block = Registry.register(Registries.BLOCK, Identifier(TutorialMod.MOD_ID, "dice_block"),
         DiceBlock(FabricBlockSettings.copyOf(Blocks.STONE)))
+
+    val CHESTNUT_SAPLING: Block = registerBlock("chestnut_sapling",
+        SaplingBlock(ChestnutSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)))
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(

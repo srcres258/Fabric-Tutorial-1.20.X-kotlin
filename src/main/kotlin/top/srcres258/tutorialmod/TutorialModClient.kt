@@ -37,7 +37,8 @@ object TutorialModClient : ClientModInitializer {
                     ModBlocks.DAHLIA,
                     ModBlocks.POTTED_DAHLIA,
 
-                    ModBlocks.CHESTNUT_LEAVES
+                    ModBlocks.CHESTNUT_LEAVES,
+                    ModBlocks.CHESTNUT_SAPLING
                 ).forEach { putBlock(it, cutout) }
             }
         }

@@ -8,10 +8,16 @@ import net.minecraft.registry.tag.BlockTags
 import net.minecraft.structure.rule.BlockMatchRuleTest
 import net.minecraft.structure.rule.TagMatchRuleTest
 import net.minecraft.util.Identifier
+import net.minecraft.util.math.intprovider.ConstantIntProvider
 import net.minecraft.world.gen.feature.ConfiguredFeature
 import net.minecraft.world.gen.feature.Feature
 import net.minecraft.world.gen.feature.FeatureConfig
 import net.minecraft.world.gen.feature.OreFeatureConfig
+import net.minecraft.world.gen.feature.TreeFeatureConfig
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer
+import net.minecraft.world.gen.stateprovider.BlockStateProvider
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer
 import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.ModBlocks
 
@@ -19,6 +25,8 @@ object ModConfiguredFeatures {
     val RUBY_ORE_KEY: RegistryKey<ConfiguredFeature<*, *>> = registerKey("ruby_ore")
     val NETHER_RUBY_ORE_KEY: RegistryKey<ConfiguredFeature<*, *>> = registerKey("nether_ruby_ore")
     val END_RUBY_ORE_KEY: RegistryKey<ConfiguredFeature<*, *>> = registerKey("end_ruby_ore")
+
+    val CHESTNUT_KEY: RegistryKey<ConfiguredFeature<*, *>> = registerKey("chestnut")
 
     fun bootstrap(context: Registerable<ConfiguredFeature<*, *>>) {
         val stoneReplacables = TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES)
@@ -39,6 +47,21 @@ object ModConfiguredFeatures {
         reg(RUBY_ORE_KEY, overworldRubyOres)
         reg(NETHER_RUBY_ORE_KEY, netherRubyOres)
         reg(END_RUBY_ORE_KEY, endRubyOres)
+
+        register(
+            context,
+            CHESTNUT_KEY,
+            Feature.TREE,
+            TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.CHESTNUT_LOG),
+                StraightTrunkPlacer(5, 4, 3),
+
+                BlockStateProvider.of(ModBlocks.CHESTNUT_LEAVES),
+                BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 2),
+
+                TwoLayersFeatureSize(1, 0, 2)
+            ).build()
+        )
     }
 
     private fun registerKey(name: String): RegistryKey<ConfiguredFeature<*, *>> =

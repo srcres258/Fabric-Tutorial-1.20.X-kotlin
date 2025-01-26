@@ -58,9 +58,9 @@ class ModLootTableProvider(dataOutput: FabricDataOutput) : FabricBlockLootTableP
         addDrop(ModBlocks.STRIPPED_CHESTNUT_LOG)
         addDrop(ModBlocks.STRIPPED_CHESTNUT_WOOD)
         addDrop(ModBlocks.CHESTNUT_PLANKS)
+        addDrop(ModBlocks.CHESTNUT_SAPLING)
 
-        // TODO: Replace RUBY_SLAB to sapling when the latter is done.
-        addDrop(ModBlocks.CHESTNUT_LEAVES, leavesDrops(ModBlocks.CHESTNUT_LEAVES, ModBlocks.RUBY_SLAB, 0.0025F))
+        addDrop(ModBlocks.CHESTNUT_LEAVES, leavesDrops(ModBlocks.CHESTNUT_LEAVES, ModBlocks.CHESTNUT_SAPLING, 0.0025F))
     }
 
     private fun copperLikeOreDrops(drop: Block, item: Item) =

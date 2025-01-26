@@ -106,6 +106,8 @@ object ModItemGroups {
 
                             add(CHESTNUT_PLANKS)
                             add(CHESTNUT_LEAVES)
+
+                            add(CHESTNUT_SAPLING)
                         }
                     }
                 }
