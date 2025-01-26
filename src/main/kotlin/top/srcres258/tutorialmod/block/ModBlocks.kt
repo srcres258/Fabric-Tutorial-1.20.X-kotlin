@@ -1,8 +1,14 @@
 package top.srcres258.tutorialmod.block
 
+import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock
+import com.terraformersmc.terraform.sign.block.TerraformSignBlock
+import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock
+import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.*
+import net.minecraft.data.family.BlockFamilies
+import net.minecraft.data.family.BlockFamily
 import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.item.BlockItem
 import net.minecraft.registry.Registries
@@ -95,6 +101,31 @@ object ModBlocks {
         Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4F)))
     val CHESTNUT_LEAVES: Block = registerBlock("chestnut_leaves",
         LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(4F).nonOpaque()))
+
+    val CHESTNUT_SIGN_TEXTURE = Identifier(TutorialMod.MOD_ID, "entity/signs/chestnut")
+    val CHESTNUT_HANGING_SIGN_TEXTURE = Identifier(TutorialMod.MOD_ID, "entity/signs/hanging/chestnut")
+    val CHESTNUT_HANGING_GUI_SIGN_TEXTURE = Identifier(TutorialMod.MOD_ID, "textures/gui/hanging_signs/chestnut")
+
+    val STANDING_CHESTNUT_SIGN: Block = Registry.register(Registries.BLOCK,
+        Identifier(TutorialMod.MOD_ID, "chestnut_standing_sign"),
+        TerraformSignBlock(CHESTNUT_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)))
+    val WALL_CHESTNUT_SIGN: Block = Registry.register(Registries.BLOCK,
+        Identifier(TutorialMod.MOD_ID, "chestnut_wall_sign"),
+        TerraformWallSignBlock(CHESTNUT_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)))
+    val HANGING_CHESTNUT_SIGN: Block = Registry.register(Registries.BLOCK,
+        Identifier(TutorialMod.MOD_ID, "chestnut_hanging_sign"),
+        TerraformHangingSignBlock(CHESTNUT_HANGING_SIGN_TEXTURE, CHESTNUT_HANGING_GUI_SIGN_TEXTURE,
+            FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)))
+    val WALL_HANGING_CHESTNUT_SIGN: Block = Registry.register(Registries.BLOCK,
+        Identifier(TutorialMod.MOD_ID, "chestnut_wall_hanging_sign"),
+        TerraformWallHangingSignBlock(CHESTNUT_HANGING_SIGN_TEXTURE, CHESTNUT_HANGING_GUI_SIGN_TEXTURE,
+            FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)))
+
+    val CHESTNUT_FAMILY: BlockFamily = BlockFamilies.register(CHESTNUT_PLANKS)
+        .sign(STANDING_CHESTNUT_SIGN, WALL_CHESTNUT_SIGN)
+        .group("wooden")
+        .unlockCriterionName("has_planks")
+        .build()
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(

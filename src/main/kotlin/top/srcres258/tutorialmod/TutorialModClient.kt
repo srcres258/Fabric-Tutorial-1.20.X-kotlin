@@ -1,12 +1,15 @@
 package top.srcres258.tutorialmod
 
+import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.minecraft.client.gui.screen.ingame.HandledScreens
 import net.minecraft.client.render.RenderLayer
+import net.minecraft.client.render.TexturedRenderLayers
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories
+import net.minecraft.client.util.SpriteIdentifier
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.block.entity.ModBlockEntities
 import top.srcres258.tutorialmod.block.entity.renderer.GemPolishingBlockEntityRenderer
@@ -45,5 +48,12 @@ object TutorialModClient : ClientModInitializer {
 
         BlockEntityRendererFactories.register(ModBlockEntities.GEM_POLISHING_STATION_BLOCK_ENTITY,
             ::GemPolishingBlockEntityRenderer)
+
+        SpriteIdentifierRegistry.INSTANCE.run {
+            addIdentifier(SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE,
+                ModBlocks.CHESTNUT_SIGN_TEXTURE))
+            addIdentifier(SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE,
+                ModBlocks.CHESTNUT_HANGING_SIGN_TEXTURE))
+        }
     }
 }

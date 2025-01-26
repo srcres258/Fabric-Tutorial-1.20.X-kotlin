@@ -54,8 +54,9 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         generator.registerLog(ModBlocks.STRIPPED_CHESTNUT_LOG)
             .log(ModBlocks.STRIPPED_CHESTNUT_LOG)
             .wood(ModBlocks.STRIPPED_CHESTNUT_WOOD)
-        generator.registerSimpleCubeAll(ModBlocks.CHESTNUT_PLANKS)
         generator.registerSimpleCubeAll(ModBlocks.CHESTNUT_LEAVES)
+        generator.registerCubeAllModelTexturePool(ModBlocks.CHESTNUT_PLANKS)
+            .family(ModBlocks.CHESTNUT_FAMILY)
     }
 
     override fun generateItemModels(generator: ItemModelGenerator) {
@@ -68,7 +69,9 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
             COAL_BRIQUETTE,
             METAL_DETECTOR,
-            BAR_BRAWL_MUSIC_DISC
+            BAR_BRAWL_MUSIC_DISC,
+
+            HANGING_CHESTNUT_SIGN
         ) }.forEach { generator.register(it, Models.GENERATED) }
 
         ModItems.run { arrayOf(

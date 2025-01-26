@@ -54,6 +54,9 @@ object ModItemGroups {
                             add(BAR_BRAWL_MUSIC_DISC)
 
                             add(PORCUPINE_SPAWN_EGG)
+
+                            add(CHESTNUT_SIGN)
+                            add(HANGING_CHESTNUT_SIGN)
                         }
 
                         // vanilla

@@ -3,17 +3,7 @@ package top.srcres258.tutorialmod.item
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
-import net.minecraft.item.AliasedBlockItem
-import net.minecraft.item.ArmorItem
-import net.minecraft.item.AxeItem
-import net.minecraft.item.HoeItem
-import net.minecraft.item.Item
-import net.minecraft.item.ItemGroups
-import net.minecraft.item.MusicDiscItem
-import net.minecraft.item.PickaxeItem
-import net.minecraft.item.ShovelItem
-import net.minecraft.item.SpawnEggItem
-import net.minecraft.item.SwordItem
+import net.minecraft.item.*
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
@@ -69,6 +59,12 @@ object ModItems {
 
     val PORCUPINE_SPAWN_EGG: Item = registerItem("porcupine_spawn_egg",
         SpawnEggItem(ModEntities.PORCUPINE, 0xA86518, 0x3B260F, FabricItemSettings()))
+
+    val CHESTNUT_SIGN: Item = registerItem("chestnut_sign",
+        SignItem(FabricItemSettings().maxCount(16), ModBlocks.STANDING_CHESTNUT_SIGN, ModBlocks.WALL_CHESTNUT_SIGN))
+    val HANGING_CHESTNUT_SIGN: Item = registerItem("chestnut_hanging_sign",
+        HangingSignItem(ModBlocks.HANGING_CHESTNUT_SIGN, ModBlocks.WALL_HANGING_CHESTNUT_SIGN,
+            FabricItemSettings().maxCount(16)))
 
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)
