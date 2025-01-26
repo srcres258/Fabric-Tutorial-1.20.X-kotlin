@@ -20,6 +20,7 @@ import top.srcres258.tutorialmod.sound.ModSounds
 import top.srcres258.tutorialmod.util.ModCustomTrades
 import top.srcres258.tutorialmod.util.ModLootTableModifiers
 import top.srcres258.tutorialmod.villager.ModVillagers
+import top.srcres258.tutorialmod.world.gen.ModWorldGeneration
 
 object TutorialMod : ModInitializer {
 	const val MOD_ID = "tutorialmod"
@@ -62,5 +63,7 @@ object TutorialMod : ModInitializer {
 		}
 
 		ModBoats.registerBoats()
+
+		ModWorldGeneration.generateModWorldGen()
 	}
 }
