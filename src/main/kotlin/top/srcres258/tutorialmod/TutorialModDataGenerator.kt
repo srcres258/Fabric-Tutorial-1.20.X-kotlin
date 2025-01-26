@@ -7,6 +7,7 @@ import net.minecraft.registry.RegistryKeys
 import top.srcres258.tutorialmod.datagen.*
 import top.srcres258.tutorialmod.world.ModConfiguredFeatures
 import top.srcres258.tutorialmod.world.ModPlacedFeatures
+import top.srcres258.tutorialmod.world.biome.ModBiomes
 
 object TutorialModDataGenerator : DataGeneratorEntrypoint {
 	override fun onInitializeDataGenerator(fabricDataGenerator: FabricDataGenerator) {
@@ -25,6 +26,7 @@ object TutorialModDataGenerator : DataGeneratorEntrypoint {
 		registryBuilder.run {
 			addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
 			addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
+			addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap)
 		}
 	}
 }
