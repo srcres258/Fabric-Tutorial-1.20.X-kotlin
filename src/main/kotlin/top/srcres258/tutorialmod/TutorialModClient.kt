@@ -6,7 +6,10 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.minecraft.client.gui.screen.ingame.HandledScreens
 import net.minecraft.client.render.RenderLayer
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories
 import top.srcres258.tutorialmod.block.ModBlocks
+import top.srcres258.tutorialmod.block.entity.ModBlockEntities
+import top.srcres258.tutorialmod.block.entity.renderer.GemPolishingBlockEntityRenderer
 import top.srcres258.tutorialmod.entity.ModEntities
 import top.srcres258.tutorialmod.entity.client.ModModelLayers
 import top.srcres258.tutorialmod.entity.client.PorcupineModel
@@ -37,5 +40,8 @@ object TutorialModClient : ClientModInitializer {
         }
 
         HandledScreens.register(ModScreenHandlers.GEM_POLISHING_SCREEN_HANDLER, ::GemPolishingScreen)
+
+        BlockEntityRendererFactories.register(ModBlockEntities.GEM_POLISHING_STATION_BLOCK_ENTITY,
+            ::GemPolishingBlockEntityRenderer)
     }
 }

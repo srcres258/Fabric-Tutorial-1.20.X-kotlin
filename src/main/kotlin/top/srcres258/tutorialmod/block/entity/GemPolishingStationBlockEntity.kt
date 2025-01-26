@@ -11,6 +11,9 @@ import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.network.PacketByteBuf
+import net.minecraft.network.listener.ClientPlayPacketListener
+import net.minecraft.network.packet.Packet
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket
 import net.minecraft.recipe.RecipeEntry
 import net.minecraft.registry.DynamicRegistryManager
 import net.minecraft.screen.PropertyDelegate
@@ -53,6 +56,19 @@ class GemPolishingStationBlockEntity(
 
     private var progress = 0
     private var maxProgress = 72
+
+    val renderStack: ItemStack
+        get() {
+            val inputStack = getStack(INPUT_SLOT)
+            val outputStack = getStack(OUTPUT_SLOT)
+
+            return if (outputStack.isEmpty) inputStack else outputStack
+        }
+
+    override fun markDirty() {
+        world?.updateListeners(pos, cachedState, cachedState, 3)
+        super<BlockEntity>.markDirty()
+    }
 
     override fun writeScreenOpeningData(player: ServerPlayerEntity, buf: PacketByteBuf) {
         buf.writeBlockPos(pos)
@@ -163,7 +179,8 @@ class GemPolishingStationBlockEntity(
     private val isOutputSlotEmptyOrReceivable
         get() = getStack(OUTPUT_SLOT).run { isEmpty || count < maxCount }
 
-    override fun markDirty() {
-        super<BlockEntity>.markDirty()
-    }
+    override fun toUpdatePacket(): Packet<ClientPlayPacketListener>? =
+        BlockEntityUpdateS2CPacket.create(this)
+
+    override fun toInitialChunkDataNbt(): NbtCompound = createNbt()
 }
