@@ -11,10 +11,10 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.math.intprovider.ConstantIntProvider
 import net.minecraft.world.gen.feature.*
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer
 import net.minecraft.world.gen.stateprovider.BlockStateProvider
 import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.ModBlocks
+import top.srcres258.tutorialmod.world.tree.custom.ChestnutFoliagePlacer
 import top.srcres258.tutorialmod.world.tree.custom.ChestnutTrunkPlacer
 
 object ModConfiguredFeatures {
@@ -53,7 +53,7 @@ object ModConfiguredFeatures {
                 ChestnutTrunkPlacer(5, 4, 3),
 
                 BlockStateProvider.of(ModBlocks.CHESTNUT_LEAVES),
-                BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 2),
+                ChestnutFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 2),
 
                 TwoLayersFeatureSize(1, 0, 2)
             ).build()

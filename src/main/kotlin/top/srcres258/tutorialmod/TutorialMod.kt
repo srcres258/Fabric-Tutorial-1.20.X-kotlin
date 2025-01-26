@@ -21,6 +21,7 @@ import top.srcres258.tutorialmod.util.ModCustomTrades
 import top.srcres258.tutorialmod.util.ModLootTableModifiers
 import top.srcres258.tutorialmod.villager.ModVillagers
 import top.srcres258.tutorialmod.world.gen.ModWorldGeneration
+import top.srcres258.tutorialmod.world.tree.ModFoliagePlacerTypes
 import top.srcres258.tutorialmod.world.tree.ModTrunkPlacerTypes
 
 object TutorialMod : ModInitializer {
@@ -47,6 +48,7 @@ object TutorialMod : ModInitializer {
 		ModRecipes.registerRecipes()
 
 		ModTrunkPlacerTypes.register()
+		ModFoliagePlacerTypes.register()
 
 		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200) // 200 is for melting one item
 
