@@ -1,5 +1,6 @@
 package top.srcres258.tutorialmod.item
 
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
@@ -9,6 +10,7 @@ import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
 import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.ModBlocks
+import top.srcres258.tutorialmod.entity.ModBoats
 import top.srcres258.tutorialmod.entity.ModEntities
 import top.srcres258.tutorialmod.item.custom.MetalDetectorItem
 import top.srcres258.tutorialmod.item.custom.ModArmorItem
@@ -65,6 +67,11 @@ object ModItems {
     val HANGING_CHESTNUT_SIGN: Item = registerItem("chestnut_hanging_sign",
         HangingSignItem(ModBlocks.HANGING_CHESTNUT_SIGN, ModBlocks.WALL_HANGING_CHESTNUT_SIGN,
             FabricItemSettings().maxCount(16)))
+
+    val CHESTNUT_BOAT: Item = TerraformBoatItemHelper.registerBoatItem(ModBoats.CHESTNUT_BOAT_ID,
+        ModBoats.CHESTNUT_BOAT_KEY, false)
+    val CHESTNUT_CHEST_BOAT: Item = TerraformBoatItemHelper.registerBoatItem(ModBoats.CHESTNUT_CHEST_BOAT_ID,
+        ModBoats.CHESTNUT_BOAT_KEY, true)
 
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)

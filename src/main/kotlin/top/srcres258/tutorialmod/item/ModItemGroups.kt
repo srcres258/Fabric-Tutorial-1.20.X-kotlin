@@ -57,6 +57,9 @@ object ModItemGroups {
 
                             add(CHESTNUT_SIGN)
                             add(HANGING_CHESTNUT_SIGN)
+
+                            add(CHESTNUT_BOAT)
+                            add(CHESTNUT_CHEST_BOAT)
                         }
 
                         // vanilla

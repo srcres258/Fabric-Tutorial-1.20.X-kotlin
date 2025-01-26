@@ -9,6 +9,7 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.block.entity.ModBlockEntities
+import top.srcres258.tutorialmod.entity.ModBoats
 import top.srcres258.tutorialmod.entity.ModEntities
 import top.srcres258.tutorialmod.entity.custom.PorcupineEntity
 import top.srcres258.tutorialmod.item.ModItemGroups
@@ -59,5 +60,7 @@ object TutorialMod : ModInitializer {
 			add(ModBlocks.CHESTNUT_PLANKS, 5, 20)
 			add(ModBlocks.CHESTNUT_LEAVES, 30, 60)
 		}
+
+		ModBoats.registerBoats()
 	}
 }

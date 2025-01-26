@@ -71,7 +71,10 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             METAL_DETECTOR,
             BAR_BRAWL_MUSIC_DISC,
 
-            HANGING_CHESTNUT_SIGN
+            HANGING_CHESTNUT_SIGN,
+
+            CHESTNUT_BOAT,
+            CHESTNUT_CHEST_BOAT
         ) }.forEach { generator.register(it, Models.GENERATED) }
 
         ModItems.run { arrayOf(
