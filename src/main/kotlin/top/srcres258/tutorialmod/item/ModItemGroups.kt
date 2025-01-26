@@ -90,6 +90,14 @@ object ModItemGroups {
                             add(DAHLIA)
 
                             add(GEM_POLISHING_STATION)
+
+                            add(CHESTNUT_LOG)
+                            add(CHESTNUT_WOOD)
+                            add(STRIPPED_CHESTNUT_LOG)
+                            add(STRIPPED_CHESTNUT_WOOD)
+
+                            add(CHESTNUT_PLANKS)
+                            add(CHESTNUT_LEAVES)
                         }
                     }
                 }

@@ -57,5 +57,14 @@ class ModBlockTagProvider(
             .add(ModBlocks.RUBY_FENCE_GATE)
         goctb(BlockTags.WALLS)
             .add(ModBlocks.RUBY_WALL)
+
+        goctb(BlockTags.PLANKS)
+            .add(ModBlocks.CHESTNUT_PLANKS)
+
+        goctb(BlockTags.LOGS_THAT_BURN)
+            .add(ModBlocks.CHESTNUT_LOG)
+            .add(ModBlocks.CHESTNUT_WOOD)
+            .add(ModBlocks.STRIPPED_CHESTNUT_LOG)
+            .add(ModBlocks.STRIPPED_CHESTNUT_WOOD)
     }
 }

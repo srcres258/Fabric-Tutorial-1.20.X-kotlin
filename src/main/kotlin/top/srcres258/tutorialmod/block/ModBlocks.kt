@@ -2,22 +2,7 @@ package top.srcres258.tutorialmod.block
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
-import net.minecraft.block.Block
-import net.minecraft.block.BlockSetType
-import net.minecraft.block.Blocks
-import net.minecraft.block.ButtonBlock
-import net.minecraft.block.DoorBlock
-import net.minecraft.block.ExperienceDroppingBlock
-import net.minecraft.block.FenceBlock
-import net.minecraft.block.FenceGateBlock
-import net.minecraft.block.FlowerBlock
-import net.minecraft.block.FlowerPotBlock
-import net.minecraft.block.PressurePlateBlock
-import net.minecraft.block.SlabBlock
-import net.minecraft.block.StairsBlock
-import net.minecraft.block.TrapdoorBlock
-import net.minecraft.block.WallBlock
-import net.minecraft.block.WoodType
+import net.minecraft.block.*
 import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.item.BlockItem
 import net.minecraft.registry.Registries
@@ -96,6 +81,20 @@ object ModBlocks {
 
     val GEM_POLISHING_STATION: Block = registerBlock("gem_polishing_station",
         GemPolishingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()))
+
+    val CHESTNUT_LOG: Block = registerBlock("chestnut_log",
+        PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).strength(4F)))
+    val CHESTNUT_WOOD: Block = registerBlock("chestnut_wood",
+        PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4F)))
+    val STRIPPED_CHESTNUT_LOG: Block = registerBlock("stripped_chestnut_log",
+        PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG).strength(4F)))
+    val STRIPPED_CHESTNUT_WOOD: Block = registerBlock("stripped_chestnut_wood",
+        PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).strength(4F)))
+
+    val CHESTNUT_PLANKS: Block = registerBlock("chestnut_planks",
+        Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4F)))
+    val CHESTNUT_LEAVES: Block = registerBlock("chestnut_leaves",
+        LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(4F).nonOpaque()))
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(

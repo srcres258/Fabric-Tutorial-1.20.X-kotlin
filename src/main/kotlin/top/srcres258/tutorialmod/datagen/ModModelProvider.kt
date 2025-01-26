@@ -47,6 +47,15 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             BlockStateModelGenerator.TintType.NOT_TINTED)
 
         generator.registerSimpleState(ModBlocks.GEM_POLISHING_STATION)
+
+        generator.registerLog(ModBlocks.CHESTNUT_LOG)
+            .log(ModBlocks.CHESTNUT_LOG)
+            .wood(ModBlocks.CHESTNUT_WOOD)
+        generator.registerLog(ModBlocks.STRIPPED_CHESTNUT_LOG)
+            .log(ModBlocks.STRIPPED_CHESTNUT_LOG)
+            .wood(ModBlocks.STRIPPED_CHESTNUT_WOOD)
+        generator.registerSimpleCubeAll(ModBlocks.CHESTNUT_PLANKS)
+        generator.registerSimpleCubeAll(ModBlocks.CHESTNUT_LEAVES)
     }
 
     override fun generateItemModels(generator: ItemModelGenerator) {

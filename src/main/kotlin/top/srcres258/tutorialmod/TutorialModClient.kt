@@ -29,7 +29,9 @@ object TutorialModClient : ClientModInitializer {
                     ModBlocks.CORN_CROP,
 
                     ModBlocks.DAHLIA,
-                    ModBlocks.POTTED_DAHLIA
+                    ModBlocks.POTTED_DAHLIA,
+
+                    ModBlocks.CHESTNUT_LEAVES
                 ).forEach { putBlock(it, cutout) }
             }
         }
