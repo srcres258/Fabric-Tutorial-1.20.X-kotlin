@@ -21,6 +21,7 @@ import top.srcres258.tutorialmod.util.ModCustomTrades
 import top.srcres258.tutorialmod.util.ModLootTableModifiers
 import top.srcres258.tutorialmod.villager.ModVillagers
 import top.srcres258.tutorialmod.world.gen.ModWorldGeneration
+import top.srcres258.tutorialmod.world.tree.ModTrunkPlacerTypes
 
 object TutorialMod : ModInitializer {
 	const val MOD_ID = "tutorialmod"
@@ -44,6 +45,8 @@ object TutorialMod : ModInitializer {
 		ModScreenHandlers.registerScreenHandlers()
 
 		ModRecipes.registerRecipes()
+
+		ModTrunkPlacerTypes.register()
 
 		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200) // 200 is for melting one item
 
