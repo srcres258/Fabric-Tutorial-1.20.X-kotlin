@@ -31,6 +31,12 @@
 				"value": "top.srcres258.tutorialmod.TutorialModDataGenerator",
 				"adapter": "kotlin"
 			}
+		],
+		"rei_client": [
+			{
+				"value": "top.srcres258.tutorialmod.compat.TutorialModREIClientPlugin",
+				"adapter": "kotlin"
+			}
 		]
 	},
 	"mixins": [

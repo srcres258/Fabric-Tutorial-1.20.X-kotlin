@@ -45,4 +45,10 @@ class GemPolishingScreen(
         super.render(context, mouseX, mouseY, delta)
         drawMouseoverTooltip(context, mouseX, mouseY)
     }
+
+    val bgWidth: Int
+        get() = backgroundWidth
+
+    val bgHeight: Int
+        get() = backgroundHeight
 }
