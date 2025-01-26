@@ -74,7 +74,9 @@ class ModModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HANGING_CHESTNUT_SIGN,
 
             CHESTNUT_BOAT,
-            CHESTNUT_CHEST_BOAT
+            CHESTNUT_CHEST_BOAT,
+
+            DICE
         ) }.forEach { generator.register(it, Models.GENERATED) }
 
         ModItems.run { arrayOf(

@@ -60,6 +60,8 @@ object ModItemGroups {
 
                             add(CHESTNUT_BOAT)
                             add(CHESTNUT_CHEST_BOAT)
+
+                            add(DICE)
                         }
 
                         // vanilla

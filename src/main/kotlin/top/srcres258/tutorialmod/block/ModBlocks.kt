@@ -17,10 +17,7 @@ import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.intprovider.UniformIntProvider
 import top.srcres258.tutorialmod.TutorialMod
-import top.srcres258.tutorialmod.block.custom.CornCropBlock
-import top.srcres258.tutorialmod.block.custom.GemPolishingStationBlock
-import top.srcres258.tutorialmod.block.custom.SoundBlock
-import top.srcres258.tutorialmod.block.custom.TomatoCropBlock
+import top.srcres258.tutorialmod.block.custom.*
 import top.srcres258.tutorialmod.sound.ModSounds
 
 object ModBlocks {
@@ -126,6 +123,9 @@ object ModBlocks {
         .group("wooden")
         .unlockCriterionName("has_planks")
         .build()
+
+    val DICE_BLOCK: Block = Registry.register(Registries.BLOCK, Identifier(TutorialMod.MOD_ID, "dice_block"),
+        DiceBlock(FabricBlockSettings.copyOf(Blocks.STONE)))
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(

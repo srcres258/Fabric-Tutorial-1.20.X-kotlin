@@ -12,6 +12,7 @@ import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.entity.ModBoats
 import top.srcres258.tutorialmod.entity.ModEntities
+import top.srcres258.tutorialmod.item.custom.DiceItem
 import top.srcres258.tutorialmod.item.custom.MetalDetectorItem
 import top.srcres258.tutorialmod.item.custom.ModArmorItem
 import top.srcres258.tutorialmod.sound.ModSounds
@@ -72,6 +73,8 @@ object ModItems {
         ModBoats.CHESTNUT_BOAT_KEY, false)
     val CHESTNUT_CHEST_BOAT: Item = TerraformBoatItemHelper.registerBoatItem(ModBoats.CHESTNUT_CHEST_BOAT_ID,
         ModBoats.CHESTNUT_BOAT_KEY, true)
+
+    val DICE: Item = registerItem("dice", DiceItem(FabricItemSettings()))
 
     private fun addItemsToIngredientItemGroup(entries: FabricItemGroupEntries) {
         entries.add(RUBY)

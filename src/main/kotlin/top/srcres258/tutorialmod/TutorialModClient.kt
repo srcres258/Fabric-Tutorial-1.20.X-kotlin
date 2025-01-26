@@ -10,6 +10,7 @@ import net.minecraft.client.gui.screen.ingame.HandledScreens
 import net.minecraft.client.render.RenderLayer
 import net.minecraft.client.render.TexturedRenderLayers
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer
 import net.minecraft.client.util.SpriteIdentifier
 import top.srcres258.tutorialmod.block.ModBlocks
 import top.srcres258.tutorialmod.block.entity.ModBlockEntities
@@ -59,5 +60,7 @@ object TutorialModClient : ClientModInitializer {
         }
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.CHESTNUT_BOAT_ID, false)
+
+        EntityRendererRegistry.register(ModEntities.DICE_PROJECTILE, ::FlyingItemEntityRenderer)
     }
 }
