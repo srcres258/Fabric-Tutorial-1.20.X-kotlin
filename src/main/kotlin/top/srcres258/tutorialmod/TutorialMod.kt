@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttribute
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry
 import net.fabricmc.fabric.api.registry.FuelRegistry
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import top.srcres258.tutorialmod.block.ModBlocks
@@ -20,6 +21,7 @@ import top.srcres258.tutorialmod.sound.ModSounds
 import top.srcres258.tutorialmod.util.ModCustomTrades
 import top.srcres258.tutorialmod.util.ModLootTableModifiers
 import top.srcres258.tutorialmod.villager.ModVillagers
+import top.srcres258.tutorialmod.world.dimension.ModDimensions
 import top.srcres258.tutorialmod.world.gen.ModWorldGeneration
 import top.srcres258.tutorialmod.world.tree.ModFoliagePlacerTypes
 import top.srcres258.tutorialmod.world.tree.ModTrunkPlacerTypes
@@ -70,5 +72,12 @@ object TutorialMod : ModInitializer {
 		ModBoats.registerBoats()
 
 		ModWorldGeneration.generateModWorldGen()
+
+		CustomPortalBuilder.beginPortal()
+			.frameBlock(ModBlocks.RUBY_BLOCK)
+			.lightWithItem(ModItems.CORN)
+			.destDimID(ModDimensions.KAUPENDIM_KEY.value)
+			.tintColor(0xC76EFA)
+			.registerPortal()
 	}
 }

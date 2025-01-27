@@ -13,7 +13,11 @@ class ModWorldGenerator(
     override fun getName(): String = "World Gen"
 
     override fun configure(registries: RegistryWrapper.WrapperLookup, entries: Entries) {
-        arrayOf(RegistryKeys.CONFIGURED_FEATURE, RegistryKeys.PLACED_FEATURE, RegistryKeys.BIOME)
-            .forEach { entries.addAll(registries.getWrapperOrThrow(it)) }
+        arrayOf(
+            RegistryKeys.CONFIGURED_FEATURE,
+            RegistryKeys.PLACED_FEATURE,
+            RegistryKeys.BIOME,
+            RegistryKeys.DIMENSION_TYPE
+        ).forEach { entries.addAll(registries.getWrapperOrThrow(it)) }
     }
 }
