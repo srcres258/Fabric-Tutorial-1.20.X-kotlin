@@ -1,5 +1,6 @@
 package top.srcres258.tutorialmod.block.custom
 
+import com.mojang.serialization.MapCodec
 import net.minecraft.block.*
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.block.entity.BlockEntityTicker
@@ -19,6 +20,12 @@ import top.srcres258.tutorialmod.block.entity.ModBlockEntities
 private val SHAPE: VoxelShape = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0)
 
 class GemPolishingStationBlock(settings: Settings) : BlockWithEntity(settings) {
+    companion object {
+        val CODEC: MapCodec<GemPolishingStationBlock> = createCodec(::GemPolishingStationBlock)
+    }
+
+    override fun getCodec(): MapCodec<out BlockWithEntity> = CODEC
+
     @Deprecated("Deprecated in Java")
     override fun getOutlineShape(
         state: BlockState?,

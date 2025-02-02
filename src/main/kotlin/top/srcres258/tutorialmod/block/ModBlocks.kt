@@ -19,7 +19,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider
 import top.srcres258.tutorialmod.TutorialMod
 import top.srcres258.tutorialmod.block.custom.*
 import top.srcres258.tutorialmod.sound.ModSounds
-import top.srcres258.tutorialmod.world.tree.ChestnutSaplingGenerator
+import top.srcres258.tutorialmod.world.tree.ModSaplingGenerators
 
 object ModBlocks {
     val RUBY_BLOCK: Block = registerBlock("ruby_block",
@@ -28,17 +28,17 @@ object ModBlocks {
         Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)))
 
     val RUBY_ORE: Block = registerBlock("ruby_ore",
-        ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2F),
-            UniformIntProvider.create(2, 5)))
+        ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
+            FabricBlockSettings.copyOf(Blocks.STONE).strength(2F)))
     val DEEPSLATE_RUBY_ORE: Block = registerBlock("deepslate_ruby_ore",
-        ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(4F),
-            UniformIntProvider.create(2, 5)))
+        ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
+            FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(4F)))
     val NETHER_RUBY_ORE: Block = registerBlock("nether_ruby_ore",
-        ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHERRACK).strength(1.5F),
-            UniformIntProvider.create(2, 5)))
+        ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
+            FabricBlockSettings.copyOf(Blocks.NETHERRACK).strength(1.5F)))
     val END_STONE_RUBY_ORE: Block = registerBlock("end_stone_ruby_ore",
-        ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.END_STONE).strength(4F),
-            UniformIntProvider.create(4, 7)))
+        ExperienceDroppingBlock(UniformIntProvider.create(4, 7),
+            FabricBlockSettings.copyOf(Blocks.END_STONE).strength(4F)))
 
     val SOUND_BLOCK: Block = registerBlock("sound_block",
         SoundBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(ModSounds.SOUND_BLOCK_SOUNDS)))
@@ -49,27 +49,21 @@ object ModBlocks {
         SlabBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))
 
     val RUBY_BUTTON: Block = registerBlock("ruby_button",
-        ButtonBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK),
-            BlockSetType.IRON, 10, true))
+        ButtonBlock(BlockSetType.IRON, 10, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))
     val RUBY_PRESSURE_PLATE: Block = registerBlock("ruby_pressure_plate",
-        PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-            FabricBlockSettings.copyOf(Blocks.IRON_BLOCK),
-            BlockSetType.IRON))
+        PressurePlateBlock(BlockSetType.IRON, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))
 
     val RUBY_FENCE: Block = registerBlock("ruby_fence",
         FenceBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))
     val RUBY_FENCE_GATE: Block = registerBlock("ruby_fence_gate",
-        FenceGateBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK),
-                WoodType.ACACIA))
+        FenceGateBlock(WoodType.ACACIA, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))
     val RUBY_WALL: Block = registerBlock("ruby_wall",
         WallBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)))
 
     val RUBY_DOOR: Block = registerBlock("ruby_door",
-        DoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque(),
-            BlockSetType.IRON))
+        DoorBlock(BlockSetType.IRON, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()))
     val RUBY_TRAPDOOR: Block = registerBlock("ruby_trapdoor",
-        TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque(),
-            BlockSetType.IRON))
+        TrapdoorBlock(BlockSetType.IRON, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()))
 
     val TOMATO_CROP: Block = Registry.register(Registries.BLOCK, Identifier(TutorialMod.MOD_ID, "tomato_crop"),
         TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)))
@@ -129,7 +123,7 @@ object ModBlocks {
         DiceBlock(FabricBlockSettings.copyOf(Blocks.STONE)))
 
     val CHESTNUT_SAPLING: Block = registerBlock("chestnut_sapling",
-        SaplingBlock(ChestnutSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)))
+        SaplingBlock(ModSaplingGenerators.CHESTNUT, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)))
 
     private fun registerBlock(name: String, block: Block) =
         Registry.register(

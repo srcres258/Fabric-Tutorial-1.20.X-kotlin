@@ -8,7 +8,6 @@ import net.minecraft.item.ItemStack
 import net.minecraft.network.PacketByteBuf
 import net.minecraft.recipe.Ingredient
 import net.minecraft.recipe.Recipe
-import net.minecraft.recipe.RecipeCodecs
 import net.minecraft.recipe.RecipeSerializer
 import net.minecraft.recipe.RecipeType
 import net.minecraft.registry.DynamicRegistryManager
@@ -57,7 +56,7 @@ class GemPolishingRecipe(
                 validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9)
                     .fieldOf("ingredients")
                     .forGetter(GemPolishingRecipe::getIngredients),
-                RecipeCodecs.CRAFTING_RESULT
+                ItemStack.RECIPE_RESULT_CODEC
                     .fieldOf("output")
                     .forGetter { r -> r.output }
             ).apply(ins, ::GemPolishingRecipe)
